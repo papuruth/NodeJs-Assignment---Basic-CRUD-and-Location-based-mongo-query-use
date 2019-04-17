@@ -92,6 +92,13 @@ exports.getUsers = function (req, res, next) {
 exports.updateUser = function (req, res) {
   user.Users.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, data) {
       if (err) return next(err);
-      res.send('Data updated successfully');
+      res.send('User updated successfully');
+  });
+};
+
+exports.deleteUser = function (req, res) {
+  user.Users.findByIdAndRemove(req.params.id, function (err, data) {
+      if (err) return next(err);
+      res.send('User deleted successfully');
   });
 };
