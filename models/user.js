@@ -13,7 +13,8 @@ const userData = new userSchema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        minlength: 8
     },
     phone: {
         type: Number,
