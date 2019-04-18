@@ -7,7 +7,7 @@ const route = require('./routes/routes')
 const { getSecret } = require('./secrets');
 
 // Connection with MongoDB
-mongoose.connect(getSecret('dbUri'), { useNewUrlParser: true , useCreateIndex: true})
+mongoose.connect(getSecret('dbUri'), { useNewUrlParser: true})
   .then(() => {
       console.log('Connected to mongoDB');
     })
